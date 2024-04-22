@@ -11,33 +11,51 @@
 <br>
 
 # SUPPORT ME -- 🚩💲🙏
+### "Welcome to the FortiGate Firewall Complete Guide! This comprehensive GitHub repository offers detailed lab guides and invaluable information for mastering FortiGate firewalls. Created with countless days and nights of dedication, this guide is entirely free for your benefit. If you find it helpful, please consider showing your support with a coffee ☕️ or your best wishes. Your encouragement fuels the continuation of this resource. Thank you for being part of this journey! 🚀🔥 #FortiGate #Firewall #Networking"
+
+<a href="https://www.buymeacoffee.com/hegdepavankumar"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=hegdepavankumar&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff" /></a>
+
+<br>
+
+# Lab Resources:
+
+- All the labs are simulated on EVE-NG
+- Fortigate Firewall Image Used Version: v7.0.9
+- Used Cisco Routers and Switches
+- Windows Active Directory Used [Windows Server 2019]
+- Eve-NG Hosted on VMware Workstation Pro 17.
+
+# How can I do Lab?
+
+- You Will Get Fortigate Image: [Click here to Download](https://drive.google.com/drive/folders/1l5OluxJoMxPoJJty2hmcfIP5Cp5gZZWX?usp=drive_link)
+- All the Images for EVE-NG and GNS3 available here also: [Cisco-Images-for-GNS3-and-EVE-NG](https://github.com/hegdepavankumar/Cisco-Images-for-GNS3-and-EVE-NG)
+- Free VMware Workstation PRO 17 Practice License: [VMware-Workstation-Pro-17-Licence-Keys](https://github.com/hegdepavankumar/VMware-Workstation-Pro-17-Licence-Keys)
+- Free VMware ESXI License Keys Lab License: [VMware-ESXi-License-Keys](https://github.com/hegdepavankumar/VMware-ESXi-License-Keys)
 
 
+<br>
 
-
-# **Topics to be covered:**
-
-### **Module 1: Introduction to Fortigate Firewall**
-
-### **Module 2: Interface Configurations & Firewall Policies**
-
-### **Module 3:  High availability**
-
-### **Module 4: Firewall Authentication**
-
-### **Module 5: Security Profiles**
-
-### **Module 6: Logging and Monitoring**
-
-### **Module 7: Certificate Operations**
-
-### **Module 8: Basic IPSEC VPN**
-
-### **Module 9: SSL VPN**
+ 
+# Topics to be covered:
 
 ---
 
-# **Module -1 Introduction to Fortigate Firewall**
+| No | Name                                                                   |
+| --- | ----------------------------------------------------------------------------|
+| Module 1   | [**Introduction to Fortigate Firewall**](#introduction-to-fortigate-firewall) |
+| Module 2   | [**Interface Configurations and Firewall Policies**](#interface-configurations-and-firewall-policies) | 
+| Module 3   | [**High availability**](#high-availability) |
+| Module 4   | [**Firewall Authentication**](#firewall-authentication) |
+| Module 5   | [**Security Profiles**](#security-profiles) |
+| Module 6   | [**Logging and Monitoring**](#logging-and-monitoring) |
+| Module 7   | [**Basic IPSEC VPN**](#basic-ipsec-vpn) |
+| Module 8   | [**SSL VPN**](#ssl-vpn) | Upcoming..
+
+
+---
+
+# MODULE 1
+## Introduction to Fortigate Firewall
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled.png)
 
@@ -432,7 +450,12 @@ The module provided a basic introduction to FortiGate firewall, covering various
 
 ---
 
-# **Module 2: Interface Configurations & Firewall Policies**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+# MODULE 2
+## Interface Configurations and Firewall Policies
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled%2020.png)
 
@@ -1039,7 +1062,12 @@ By understanding and implementing the concepts covered in Module 2, administrato
 
 ---
 
-# **Module 3:  High availability**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+# MODULE 3
+## High availability
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled%2039.png)
 
@@ -1253,7 +1281,12 @@ Module 3 of the FortiGate firewall course covers high availability (HA) configur
 
 ---
 
-# **Module 4:  Firewall Authentication**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+# MODULE 4
+## Firewall Authentication
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled%2056.png)
 
@@ -1389,7 +1422,12 @@ By covering these topics, Module 4 provides administrators with the knowledge an
 
 ---
 
-# **Module 5: Security Profiles**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+# MODULE 5
+## Security Profiles
 
 Table of contents:
 
@@ -1531,7 +1569,13 @@ By understanding and configuring these security profiles, administrators can imp
 
 ---
 
-# **Module 6: Logging and Monitoring**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+
+# MODULE 6
+## Logging and Monitoring
 
 Table of contents:
 
@@ -1623,7 +1667,12 @@ This module equips administrators with the knowledge to efficiently monitor netw
 
 ---
 
-# **Module 7: Basic IPSEC VPN**
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
+# MODULE 7
+## Basic IPSEC VPN
 
 Table of contents:
 
@@ -1788,6 +1837,11 @@ Site-A to Site-B [Site-to-Site] VPN. Go to **VPN —> IPsec Wizard**
 - Provides a step-by-step guide on configuring IPsec VPN between FortiGate firewalls, ensuring secure communication channels between networks or devices.
 
 This module equips administrators with essential knowledge and practical skills for setting up IPsec VPNs using FortiGate firewalls, enhancing network security, and enabling secure communication over the internet.
+
+<br>
+
+**[⬆ Back to Top](#topics-to-be-covered)**
+
 
 ---
 
