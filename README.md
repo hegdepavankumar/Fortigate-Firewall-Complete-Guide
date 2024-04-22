@@ -1,4 +1,19 @@
-# Fortigate Study Guide v7.x
+# Fortigate-Firewall-Complete-Guide
+
+![GitHub](https://img.shields.io/github/license/hegdepavankumar/Fortigate-Firewall-Complete-Guide?style=flat)
+![GitHub last commit](https://img.shields.io/github/last-commit/hegdepavankumar/Fortigate-Firewall-Complete-Guide?style=flat)
+![ViewCount](https://views.whatilearened.today/views/github/hegdepavankumar/Fortigate-Firewall-Complete-Guide.svg?cache=remove)
+
+<br>
+
+[![telegram (1)](https://github.com/hegdepavankumar/VMware-ESXi-License-Keys/assets/85627085/cbc449b9-ddda-4d84-8c5e-5c77e29f89ed)](https://t.me/resourcehub1)
+
+<br>
+
+# SUPPORT ME -- 🚩💲🙏
+
+
+
 
 # **Topics to be covered:**
 
@@ -1787,3 +1802,23 @@ This module equips administrators with essential knowledge and practical skills 
 - **Module 7: Basic IPSEC VPN**: Provided an understanding of IPsec architecture, IKE Phase 1 & 2, and practical guidance on configuring IPsec VPNs between FortiGate firewalls.
 
 By completing these modules, you've gained a comprehensive understanding of FortiGate firewall functionalities, security features, high availability configurations, authentication mechanisms, logging and monitoring practices, and VPN setups. You're now well-equipped to manage and secure network environments effectively using FortiGate firewall solutions. Great job!
+
+<br>
+
+## Creator [🔝](#Fortigate-Firewall-Complete-Guide)
+
+(https://github.com/hegdepavankumar). Created by:-
+
+| [<img src="https://github.com/hegdepavankumar.png?size=115" width="115"><br><sub>@hegdepavankumar</sub>](https://github.com/hegdepavankumar) |
+
+<br>
+<h3 align="center">Show some &nbsp;❤️&nbsp; by starring some of the repositories!</h3>
+<br>
+
+
+ <!-- Support Me --> 
+
+
+If you like what I do, maybe consider buying me a coffee 🥺👉👈
+
+<a href="https://www.buymeacoffee.com/hegdepavankumar" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" width="150" ></a>
