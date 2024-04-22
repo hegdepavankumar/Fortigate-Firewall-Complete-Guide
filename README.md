@@ -49,7 +49,8 @@
 | Module 5   | [**Security Profiles**](#security-profiles) |
 | Module 6   | [**Logging and Monitoring**](#logging-and-monitoring) |
 | Module 7   | [**Basic IPSEC VPN**](#basic-ipsec-vpn) |
-| Module 8   | [**SSL VPN**](#ssl-vpn) | Upcoming..
+| Module 8   | [**SSL VPN**](#ssl-vpn)  Upcoming..| 
+| Module 9   | [****](#Upcoming) Upcoming.. |
 
 
 ---
@@ -1859,6 +1860,15 @@ By completing these modules, you've gained a comprehensive understanding of Fort
 
 <br>
 
+# EXTRA 💲💲🎯🚩🔥🔥 Available Soon...  JUST For💳 5$💸
+
+- Complete Lab Guide with 100+ Lab Problems and Solutions🖥📖💻
+- With Evaluation license-activated images for Lab📜🏷
+- All the Lab Topology[EVE-NG]📊💼
+- All this Github Repo "Fortigate Firewall Complete Guide" +pdf format📓📑
+
+  <hr>
+
 ## Creator [🔝](#Fortigate-Firewall-Complete-Guide)
 
 (https://github.com/hegdepavankumar). Created by:-
@@ -1869,6 +1879,7 @@ By completing these modules, you've gained a comprehensive understanding of Fort
 <h3 align="center">Show some &nbsp;❤️&nbsp; by starring some of the repositories!</h3>
 <br>
 
+<hr>
 
  <!-- Support Me --> 
 
