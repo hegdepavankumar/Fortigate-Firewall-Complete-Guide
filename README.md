@@ -1585,6 +1585,7 @@ Table of contents:
 - Understanding Log structures
 - Configuring log settings
 - Redirect logs to Syslog & SNMP
+- Fortigate One-Arm Sniffer & SPAN 
 
 # FortiGate Firewall Logging and Monitoring
 
@@ -1656,6 +1657,119 @@ FortiGate firewall supports sending logs to external logging and monitoring syst
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled%2092.png)
 
+
+
+## 6. FortiGate Firewall One-Arm Sniffer Configuration:
+
+**1. Enable Sniffer:**
+   - Log in to your FortiGate firewall using a web browser or SSH.
+   - Navigate to the CLI (Command Line Interface) or the GUI (Graphical User Interface).
+   - Enable the sniffer feature. You can do this through the CLI using the following command:
+     ```
+     config system settings
+     set sniffer-enabled enable
+     end
+     ```
+   - Alternatively, in the GUI, you can navigate to **System > Settings** and then enable the sniffer from there.
+
+**2. Configure One-Arm Sniffer Interface:**
+   - Determine which interface you want to use for the one-arm sniffer. This interface should be connected to the network segment you want to monitor.
+   - Configure the interface as a sniffer interface. In the CLI:
+     ```
+     config system interface
+     edit <interface_name>
+     set sniffer-mode sniffer
+     set vdom <vdom_name>  // If applicable
+     set ip <interface_IP/netmask>
+     set allowaccess ping https ssh
+     next
+     end
+     ```
+   - Replace `<interface_name>` with the actual name of your interface, and `<vdom_name>` with the virtual domain name if applicable.
+
+**3. Set Sniffer Filters (Optional):**
+   - You can specify filters to capture specific traffic, such as by source/destination IP, port, protocol, etc. This step is optional but can be useful for focusing on relevant traffic.
+   - Filters can be set using the following CLI command:
+     ```
+     config system sniffer filter
+     edit <filter_name>
+     set sniffer <interface_name>
+     set source <source_IP/netmask>  // Optional
+     set destination <destination_IP/netmask>  // Optional
+     set port <port_number>  // Optional
+     set protocol <protocol>  // Optional
+     next
+     end
+     ```
+
+**4. Start Sniffer:**
+   - Once configured, start the sniffer to begin capturing network traffic. Use the following command:
+     ```
+     diagnose sniffer packet <interface_name> <filter_name>  // If filters are configured
+     ```
+
+**5. View Sniffer Output:**
+   - You can view the captured packets either directly on the CLI or by exporting them to a file for analysis using Wireshark or similar tools.
+
+## 7. Cisco Switch SPAN Monitor Source and Destination Configuration:
+
+**1. Define SPAN Session:**
+   - Log in to your Cisco switch using a console connection or SSH.
+   - Determine which ports you want to monitor (source ports) and where you want to send the monitored traffic (destination port).
+   - Configure a SPAN session. In the CLI:
+     ```
+     monitor session <session_number> source interface <source_interface>  // Source ports
+     monitor session <session_number> destination interface <destination_interface>  // Destination port
+     ```
+   - Replace `<session_number>` with the desired session number, `<source_interface>` with the source interface(s) to be monitored, and `<destination_interface>` with the destination interface to which the monitored traffic will be sent.
+
+**2. Configure SPAN Type (Optional):**
+   - By default, SPAN sessions are configured as local SPAN, meaning the monitored traffic stays within the switch. If you want to send the traffic to a remote device for analysis, you'll need to configure a Remote SPAN (RSPAN) or Encapsulated Remote SPAN (ERSPAN) session.
+
+**3. Verify SPAN Configuration:**
+   - After configuring the SPAN session, verify the configuration to ensure it's correct. You can use the following command:
+     ```
+     show monitor session <session_number>
+     ```
+
+**4. Start Monitoring:**
+   - Once the SPAN session is configured, it automatically starts monitoring traffic on the specified source ports and sends it to the destination port.
+
+**5. Analyze Monitored Traffic:**
+   - You can connect a monitoring device (e.g., a packet analyzer or network monitoring tool) to the destination port to capture and analyze the monitored traffic.
+
+These configurations should help you set up One-Arm Sniffer on FortiGate firewall and SPAN monitoring on a Cisco switch effectively. Remember to adjust the settings according to your specific network requirements and security policies.
+
+## **Demo:**
+
+### **Sample Topology:**
+
+![Untitled 102](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/301b34dc-e1f5-425c-a253-0d294bd8caf3)
+
+### **Cisco Switch ports which are connected to the PC and Firewall, configured SPAN(Switch Port Analyzer):**
+
+![Untitled 103](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/9d1a5d66-e94a-41c1-8ffe-9fb1e78e0060)
+
+### **Fortigate port2 make it interface type as One-Arm Sniffer, Follow the Image Instructions:**
+
+![Untitled 104](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/e4adc4aa-a3b2-43da-8754-151b66425778)
+
+### **Generating traffic from the PC towards the internet, all packets are sent to Firewall as well:**
+
+![Untitled 105](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/5ab7655f-8f7a-48b0-af06-534851c297a7)
+
+### **To check the Packet sniffed from the PC, go to "Logs & Report" --> "Sniffer Traffic":**
+
+![Untitled 106](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/cedd3cb2-7648-4e99-a60c-afc2d617d424)
+
+
+### **Sample Log data:**
+
+[memory-traffic-sniffer-2024-04-22_2048.log](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/files/15071152/memory-traffic-sniffer-2024-04-22_2048.log)
+
+
+---
+
 ## Summary:
 
 - Covers log severity levels, helping prioritize security events effectively.
@@ -1663,6 +1777,7 @@ FortiGate firewall supports sending logs to external logging and monitoring syst
 - Details the structured format of logs, aiding in efficient interpretation.
 - Discusses configuring log settings for tailored logging behavior.
 - Demonstrates redirecting logs to external systems like Syslog and SNMP for centralized monitoring.
+- Gives a hands-on and good understanding of FortiGate packet sniffing and SPAN configuration.
 
 This module equips administrators with the knowledge to efficiently monitor network activity, detect security incidents, and ensure the reliability of their network infrastructure.
 
