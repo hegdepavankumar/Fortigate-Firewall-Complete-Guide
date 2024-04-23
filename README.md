@@ -467,6 +467,7 @@ Table of contents:
 - Configuring DHCP
 - Basic Firewall Policies
 - Network Address Translation - Fortigate
+- Virtual Wire configuration
 
 # **I. Basic Interface Configuration**
 
@@ -1048,6 +1049,123 @@ end
 **If you want to Map the original protocol number with custom - you can do it by configuring the Protocol Option. Port Mapping.**
 
 ![Untitled](Fortigate%20Study%20Guide%20v7%20x%20147f58070a3c4e51a249bf2237fd18d0/Untitled%2038.png)
+
+
+<br>
+
+
+# **VI. Virtual Wire configuration**
+
+Certainly! FortiGate Virtual Wire (VW) is a feature that allows you to transparently insert security services, such as firewall policies and intrusion prevention systems (IPS), into the network without changing the IP addressing or topology. It operates at Layer 2 of the OSI model, meaning it doesn't require IP addresses to be changed, making it ideal for scenarios where IP addressing cannot be modified easily.
+
+## Advantages of Virtual Wire Feature:
+
+Here's a breakdown of the key theoretical aspects of FortiGate Virtual Wire:
+
+**1. Layer 2 Operation:**
+   - Virtual Wire operates at Layer 2 (Data Link Layer) of the OSI model, which means it deals with MAC addresses rather than IP addresses. This allows the FortiGate firewall to seamlessly intercept and inspect traffic passing through it without requiring any IP address changes.
+   - Since Virtual Wire operates at Layer 2, it can't perform routing or NAT (Network Address Translation). Instead, it forwards packets based on MAC addresses.
+
+**2. Transparent Traffic Inspection:**
+   - Virtual Wire enables the insertion of security services, such as firewall policies, intrusion prevention systems (IPS), and antivirus scanning, into the network path without disrupting normal network operations.
+   - Traffic passing through the Virtual Wire is transparently inspected by the FortiGate firewall, which can enforce security policies and detect and mitigate threats in real-time.
+
+**3. In-line Deployment:**
+   - In Virtual Wire deployment, the FortiGate firewall sits in-line between two network segments, intercepting traffic as it passes through.
+   - It typically involves configuring two physical interfaces on the FortiGate firewall—one for inbound traffic (ingress interface) and the other for outbound traffic (egress interface).
+
+**4. Traffic Forwarding and Filtering:**
+   - Once traffic enters the Virtual Wire, it is forwarded to the appropriate egress interface based on the configured security policies.
+   - The firewall inspects the traffic according to predefined security rules, including firewall policies, IPS signatures, antivirus scans, and other security profiles.
+   - If the traffic matches any security policy, the firewall takes the specified action (e.g., allow, deny, log).
+
+**5. VLAN Support:**
+   - Virtual Wire supports VLANs, allowing you to segment traffic within the Virtual Wire deployment.
+   - You can assign VLAN IDs to the Virtual Wire configuration to handle tagged VLAN traffic between network segments.
+
+**6. Simplified Deployment and Management:**
+   - Virtual Wire simplifies the deployment of security services by eliminating the need for complex network reconfigurations.
+   - It also simplifies management by providing a transparent way to insert security services into the network path, reducing operational overhead and minimizing disruption to network operations.
+
+
+
+Here's a detailed explanation of the concept along with configuration steps:
+
+**1. Security Policy Configuration:**
+
+Create security policies to define how traffic is handled by the Virtual Wire pair. This includes specifying the source and destination zones, as well as the security profiles to be applied (e.g., IPS, antivirus).
+
+```plaintext
+config firewall policy
+    edit 1
+        set srcintf "port2"
+        set dstintf "port3"
+        set action accept
+        ...
+    next
+end
+```
+
+- `srcintf`: Specifies the source interface.
+- `dstintf`: Specifies the destination interface.
+- `action`: Defines the action to be taken on the traffic (e.g., accept, deny).
+
+**2. Monitoring and Logging:**
+
+Configure logging and monitoring to track traffic passing through the Virtual Wire for security analysis and troubleshooting purposes.
+
+```plaintext
+config log
+    set status enable
+    ...
+end
+```
+
+**3. Testing and Verification:**
+
+Test the Virtual Wire configuration to ensure that traffic is being inspected and forwarded correctly without any disruptions to network connectivity.
+
+This configuration enables the FortiGate unit to operate in Virtual Wire mode, transparently inspecting and filtering traffic between two network segments without requiring any changes to IP addressing or network topology.
+
+---
+
+## **Demo:**
+
+**Sample Topology:**
+
+![Untitled 107](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/eaa2df16-f970-4545-a0b5-332049d71c14)
+
+**To configure Virtual Wire, go to Interface --> Create New:**
+
+![Untitled 108](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/d787a95f-cf9c-4eee-81fc-d834a23fb4e7)
+
+**Now new Virtual Pair Interface is Configured:**
+
+![Untitled 109](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/dfe4f465-dbb1-4443-b8e7-6b9e01d3a032)
+
+
+**As per the Fortigate we have to configure the Firewall Virtual Wire Pair Policy, go to Policy & Objects --> Firewall Virtual Wire Pair Policy --> create bidirectional policy:**
+
+![Untitled 110](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/a91fd382-d555-4b7c-9cac-9a4cc149bf76)
+
+
+**Now is the Time to Initiate the traffic towards the internet, all the traffic will be available in the firewall, Logs --> Forwarded Traffic:**
+
+![Untitled 111](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/aa845e45-e949-4f96-921f-86f32a352afc)
+
+
+**Check the logs to verify the Source and destination information, Traffic from PC to Internet.:**
+
+![Untitled 112](https://github.com/hegdepavankumar/Fortigate-Firewall-Complete-Guide/assets/85627085/8639c6ac-431e-4cf7-8cdf-9e2575e1bc13)
+
+
+## NOTE
+- To get Internet access to the PC, we have configured Static NAT on the Router[Edge_R].
+- Without NAT we are not able to access the internet, the ISP drops the packet.
+- Because Private IPs are not routable in ISPs. 
+
+  
+---
 
 ### **Summary:**
 
