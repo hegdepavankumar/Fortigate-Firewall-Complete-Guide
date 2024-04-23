@@ -2093,14 +2093,6 @@ By completing these modules, you've gained a comprehensive understanding of Fort
 
 <br>
 
-# EXTRA 💲💲🎯🚩🔥🔥 Available Soon...  JUST For💳 5$💸
-
-- Complete Lab Guide with 100+ Lab Problems and Solutions🖥📖💻
-- With Evaluation license-activated images for Lab📜🏷
-- All the Lab Topology[EVE-NG]📊💼
-- All this Github Repo "Fortigate Firewall Complete Guide" +pdf format📓📑
-
-  <hr>
 
 ## Creator [🔝](#Fortigate-Firewall-Complete-Guide)
 
