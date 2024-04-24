@@ -13,7 +13,7 @@
 # SUPPORT ME -- 🚩💲🙏
 ### "Welcome to the FortiGate Firewall Complete Guide! This comprehensive GitHub repository offers detailed lab guides and invaluable information for mastering FortiGate firewalls. Created with countless days and nights of dedication, this guide is entirely free for your benefit. If you find it helpful, please consider showing your support with a coffee ☕️ or your best wishes. Your encouragement fuels the continuation of this resource. Thank you for being part of this journey! 🚀🔥 #FortiGate #Firewall #Networking"
 
-<a href="https://www.buymeacoffee.com/hegdepavankumar"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=hegdepavankumar&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff" /></a>
+<a href="https://www.buymeacoffee.com/hegdepavankumar"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=hegdepavankumar&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
 
 <br>
 
